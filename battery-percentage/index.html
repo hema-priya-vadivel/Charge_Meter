@@ -40,9 +40,9 @@
 
 <body>
   <main>
-    <h1>Battery Percentage App 🔋</h1>
-    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;width: 21.5em;margin:0 auto;">
-      <div class="card-header">Your current Battery Percentage is:</div>
+    <h1 style="color: black;">Charge Meter 🔋</h1>
+    <div class="card text-dark bg-light mb-3" style="max-width: 22rem; margin: 20px auto 0;">
+      <div class="card-header">Current Battery Percentage is:</div>
       <div class="card-body">
         <h5 class="card-title"><div class="battery"></div></h5>
       </div>
@@ -53,7 +53,7 @@
     const batteryLevel=document.querySelector(".battery");
     navigator.getBattery().then(function(battery){
       const level=battery.level;
-      const currLevel=level*100+"%";
+      const currLevel=(level*100).toFixed(2)+"%";
       batteryLevel.innerHTML=currLevel;
     });
   </script>
